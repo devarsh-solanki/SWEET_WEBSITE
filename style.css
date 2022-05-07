@@ -1,0 +1,618 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ----------------------------------UTILITY CLASSES---------------------------------------------- */
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.max-font{
+    font-size: 3.2rem;
+}
+
+.mid-font{
+    font-size: 2.5rem;
+}
+
+.min-font{
+    font-size: 2rem;
+}
+
+.p-font{
+    font-size: 1.8rem;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    padding: 1rem 2.5rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 50px;
+}
+
+.btn-primary{
+    color: white;
+    background-color: #1a967d;
+}
+
+.btn-primary:hover{
+    background-color: #16856f;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.fill-color{
+    color: #117964;
+    font-weight: 600;
+}
+
+.font-normal{
+    font-weight: 400;
+}
+
+/* --------------------------------------NAV-BAR STYLING-------------------------------------------- */
+
+/* FOR DESKTOP */
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-menu{
+    display: none;
+}
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px rgba(170, 170, 170, 0.5);
+    position: fixed;
+    width: 100%;
+    color: black;
+    background-color: #fff;
+    opacity: 0.85;
+    z-index: 5;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-around;
+    height: 58px;
+    align-items: center;
+}
+
+.menu-items{
+    order: 2;
+    display: flex;
+}
+
+.menu-items li{
+    list-style: none;
+    margin-left: 2rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+}
+
+.logo{
+     order: 1; 
+     display: flex; 
+     margin-right: 45rem;                                                                                                                                 
+}
+
+.navbar a{
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar a:hover{
+    color: #117964;
+}
+
+/* -----------------------showcase styling-------------------------------------------------- */
+
+.showcase-area{
+    height: 60vh;
+    background: linear-gradient(rgba(240,240,240,0.144),rgba(255,255,255,0.336)),url("./images/chocolate-eggs-candy-white-background-chocolate-eggs-hd-wallpaper-preview.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.showcase-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.8rem;
+}
+
+/* -----------------------------------about styling------------------------------ */
+
+#about{
+    padding: 50px 0;
+    background-color: #fafafa;
+}
+
+.about-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about .small{
+    font-weight: 500;
+}
+
+.about-image{
+    flex: 1 1 400px;
+    transform: translateX(100%);
+    animation: about-image-animation 1.5s ease-in-out forwards;
+}
+
+@keyframes about-image-animation{
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.about-text{
+    flex: 1 1 400px;
+    margin: auto;
+    transform: translateX(-100%);
+    animation: about-text-animation 1.5s ease-in-out forwards;
+}
+
+@keyframes about-text-animation{
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.about-image img{
+    display: block;
+    height: 350px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* --------------------------------------------sweet styling------------------------------ */
+
+#sweet h2{
+    font-weight: 400;
+    text-align: center;
+    padding-top: 30px;
+    color: #444;
+}
+
+.sweet-container{ 
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.img-container{
+    margin: 0 1rem;
+    position: relative;
+}
+
+.img-container img{
+    display: block;
+    width: 100%;
+    max-height: 250px;
+}
+
+.img-content{
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.img-content h3{
+    color: white;
+    font-size: 2.5rem;
+}
+
+.img-content a{
+    font-size: 1.4rem;
+}
+
+.img-container::after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.img-container:hover:after{
+    opacity: 1;
+}
+
+.img-container:hover .img-content{
+    opacity: 1;
+    bottom: 20%;
+}
+
+/* --------------------------------sweet menu styling---------------------------- */
+
+#sweet-menu h2{
+    padding-top: 40px;
+}
+
+.sweet-menu-heading{
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 30px;
+    color: #444;
+}
+
+.sweet-menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0 30px 0;
+}
+
+.sweet-menu-container img{
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sweet-menu-item{
+    display: flex;
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+
+.sweet-description{
+    margin: auto 2rem;
+    font-size: 1.5rem;
+}
+
+/* -------------------------------testimonial styling-------------------------------- */
+
+#testimonial{
+    padding: 3rem 0;
+    background-color: rgb(250, 250, 250);
+}
+
+.testimonial-title{
+    text-align: center;
+}
+
+.testimonial-container{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+
+.testimonial-box .checked{
+    color: rgb(255, 174, 0);
+}
+
+.testimonial-box .testimonial-text{
+    margin: 1rem 0;
+}
+
+.testimonial-box{
+    text-align: center;
+    padding: 1rem;
+}
+
+.customer-photo img{
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+}
+
+/* --------------------------contact us styling------------------------ */
+
+#contact{
+    padding: 5rem 0;
+    background-color: rgb(246, 246, 246);
+}
+
+.contact-container{
+    display: flex;
+    background-color: white;
+}
+
+.contact-img{
+    width: 50%;
+}
+
+.contact-img img{
+    display: block;
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.form-container{
+    width: 50%;
+    padding: 1rem;
+    margin: auto;
+}
+
+.form-container input{
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #bbb;
+    color: #444;
+    padding: 2rem o;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    box-shadow: none;
+}
+
+.form-container textarea{
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid #bbb;
+    padding: 1rem o;
+}
+
+.form-container h2{
+    display: inline-block;
+    padding-bottom: 3rem;
+}
+
+.form-container a{
+    font-size: 1.4rem;
+    margin-top: 2rem;
+}
+
+#footer{
+    text-align: center;
+    padding: 3rem;
+    color: white;
+    background-color: #555;
+    font-weight: 500;
+}
+
+/* ------------------------media queries---------------------------- */
+
+@media (max-width: 768px){
+    .navbar{
+        opacity: 0.95;
+    }
+
+    .navbar input[type="checkbox"],
+    .navbar .hamburger-menu{
+        display: block;
+    }
+
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+
+    .navbar-container input[type="checkbox"]{
+        display: block;
+        position: absolute;
+        height: 32px;
+        width: 40px;
+        z-index: 5;
+        opacity: 0;
+    }
+
+    .navbar-container .hamburger-line{
+        height: 32px;
+        width: 40px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-container .hamburger-line .line{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: #444;
+        z-index: 1;
+    }
+
+    .navbar-container .hamburger-line .line1{
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .navbar-container .hamburger-line .line2{
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .navbar-container .hamburger-line .line3{
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .navbar .menu-items{
+        padding-top: 100px;
+        background-color: white;
+        max-width: 300px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin-top: -60px;
+        margin-left: -40px;
+        padding-left: 50px;
+        transform: translateX(-150%);
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 5px 0 10px 0 #aaa;
+    }
+
+    .navbar .menu-items li{
+        margin-bottom: 3rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .logo{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+        transform: translateX(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-line .line{
+        color: #444;
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-line .line1{
+        transform: rotate(45deg);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-line .line2{
+        transform: scaleY(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-line .line3{
+        transform: rotate(-45deg);
+    }
+
+    /* -----------------------sweet styling-------------------- */
+
+    .sweet-container{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sweet-type:not(:last-child){
+        margin-bottom: 4rem;
+    }
+
+    .sweet-type{
+        box-shadow: 5px 5px 10px 0px rgba(170, 170, 170, 0.6);
+    }
+
+    .img-container{
+        margin: 0;
+    }
+}
+
+@media (max-width: 500px){
+    html{
+        font-size: 50%;
+    }
+
+    .testimonial-container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sweet-menu-item{
+        flex-direction: column;
+        text-align: center;
+        background-color: #fafafa;
+        box-shadow: 5px 5px 10px 0px rgba(170, 170, 170, 0.151);
+    }
+
+    .navbar .menu-items{
+        height: 1200px;
+    }
+
+    .sweet-menu-container img{
+        padding-top: 2rem;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        margin: auto;
+    }
+    
+    #sweet h2{
+        padding-top: 1rem;
+    }
+    
+    .logo{
+        left: 80%;
+    }
+
+    .about-image{
+        padding-top: 3rem;
+    }
+
+    .sweet-menu-heading{
+        padding-bottom: 0;
+    }
+
+    .form-container{
+        width: 90%;
+    }
+
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-img{
+        width: 90%;
+        margin: 3rem auto;
+        box-shadow: 5px 5px 10px 0px rgba(170, 170, 170, 0.151);
+    }
+}
+
+/* -------------------------landscape mode------------------------ */
+
+@media (orientation: landscape) and (max-height: 500px){
+    .showcase-area{
+        height: 50vmax;
+    }
+}
+
+/* https://gifted-bell-846af4.netlify.app */
